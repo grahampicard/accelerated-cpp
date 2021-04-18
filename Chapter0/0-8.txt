@@ -1,0 +1,2 @@
+// omitting
+// Yes, becuase it's commented with single line comments

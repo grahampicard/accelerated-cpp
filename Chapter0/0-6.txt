@@ -1,0 +1,7 @@
+// Is this valid?
+
+// #include <iostream>
+// int main() 
+// {{{{{ std::cout << "Hello, world!" << std::endl; }}}}}
+
+// Yes, curly brackets represent an execution unit
