@@ -1,15 +1,33 @@
+# Declare compilers that will be used
+# := 	#onetime assignment
+# = 	#dynamic assignment
 CC := g++
 CFLAGS := -Wall -g
-TARGET := test
 
+# These are the references we make to our .cc files and
+# the ouptut files that we want to create
 SRCS := $(wildcard *.cc)
-OBJS := $(patsubst %.cc,%.o,$(SRCS))
+OBJS := $(patsubst %.cc, %.out, $(SRCS))
 
-all: $(TARGET)
-$(TARGET): $(OBJS)
-	$(CC) -o $@ $^
-%.o: %.cc
-	$(CC) $(CFLAGS) -c $<
-clean:
-	rm -rf $(TARGET) *.o
-	
+# Make follows the patern
+#
+# 	Target: Prerequisite
+# 		Rule
+#
+# Make first checks if the prerequisite exists. If it doesn't,
+# Then it recursively finds the starting file. At this point,
+# Make then generates the "target" based on the rule provided
+# below.
+#
+# In our case, we want `all` to generate outputs for each .cc
+# file that we have. 
+# 
+# make will first check to make sure $(OBJS) files exists.
+all:$(OBJS)
+
+# Make will create an object for each source
+# $@ #target 
+# $< #source
+$(OBJS): $(SRCS)
+	$(CC) $(CFLAGS) -o $@ $<
+
