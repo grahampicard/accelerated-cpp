@@ -2,8 +2,8 @@
 #include <string>
 
 // say what standard library names we use
-using std::cin;            using std::endl;
-using std::cout;           using std::string;
+using std::cin;         using std::endl;
+using std::cout;        using std::string;
 
 int main()
 {
@@ -53,6 +53,3 @@ int main()
     } 
     return 0;
 }
-
-
-

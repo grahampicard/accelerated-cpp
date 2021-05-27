@@ -7,7 +7,7 @@ CFLAGS := -Wall -g
 # These are the references we make to our .cc files and
 # the ouptut files that we want to create
 SRCS := $(wildcard *.cc)
-OBJS := $(patsubst %.cc, %.out, $(SRCS))
+OBJS := $(patsubst %.cc, %, $(SRCS))
 
 # Make follows the patern
 #
@@ -27,7 +27,9 @@ all:$(OBJS)
 
 # Make will create an object for each source
 # $@ #target 
-# $< #source
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) -o $@ $<
+$(OBJS):
+	$(CC) $(CFLAGS) -o $@.out $@.cc 
 
+# remove all .out files
+clean:
+	rm *.out

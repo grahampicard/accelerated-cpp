@@ -2,10 +2,8 @@
 #include <string>
 
 // say what standard library names we use
-using std::cin;            
-using std::endl;
-using std::cout;           
-using std::string;
+using std::cin;         using std::endl;
+using std::cout;        using std::string;
 
 int main()
 {
@@ -16,16 +14,17 @@ int main()
     string name;
     cin >> name;
 
+    // ask for padding size
+    cout << "Enter in desired padding: ";
+    int pad;
+    cin >> pad;
+
     // build the message we intend to write
     const string greeting = "Hello, " + name + "!";
 
-    // the number of blanks surrounding the greeting
-    const int pad_v = 3;
-    const int pad_h = 5;
-
     // the number of rows and columns to write
-    const int rows = pad_v * 2 + 3;
-    const string::size_type cols = greeting.size() + pad_h * 2 + 2;
+    const int rows = pad * 2 + 3;
+    const string::size_type cols = greeting.size() + pad * 2 + 2;
 
     // write a blank line to separate the output from the input;
     cout << endl;
@@ -39,7 +38,7 @@ int main()
         while (c != cols) {
             
             // is it time to write the greeting?
-            if (r == pad_h + 1 && c == pad_h + 1) {
+            if (r == pad + 1 && c == pad + 1) {
                 cout << greeting;
                 c += greeting.size();
             } else {
@@ -56,6 +55,3 @@ int main()
     } 
     return 0;
 }
-
-
-
