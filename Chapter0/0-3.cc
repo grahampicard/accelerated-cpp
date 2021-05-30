@@ -5,6 +5,6 @@
 #include <iostream>
 
 int main() {
-    std::cout << "TEXT\tTEXT" << std::endl;
-    return 0;
+  std::cout << "TEXT\tTEXT" << std::endl;
+  return 0;
 }

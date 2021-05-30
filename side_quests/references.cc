@@ -2,10 +2,10 @@
 // confusion for me.
 //
 // The issue is that the concept isn't present in Python, so it can be hard to
-// develop an intuiton for it. 
+// develop an intuiton for it.
 //
 // To help build the intuition, we need to think about two things: 1. functions
-//      2. variable "assignment" and "reference". 
+//      2. variable "assignment" and "reference".
 //
 // In Python, functions take arguments in and output another argument. When we
 // pass an argument to a function, python will create a new reference, and
@@ -25,34 +25,29 @@
 
 #include <iostream>
 
-void adder(int a, int b)
-{
-    std::cout << "(adder1) a, b: " << a << ", " << b << std::endl;
-    a = a + 10;
-    b = b + 10;
+void adder(int a, int b) {
+  std::cout << "(adder1) a, b: " << a << ", " << b << std::endl;
+  a = a + 10;
+  b = b + 10;
 }
 
-void adder2(int a, int& b)
-{
-    std::cout << "(adder2) a, b: " << a << ", " << b << std::endl;
-    a = a + 10;
-    b = b + 10;
+void adder2(int a, int& b) {
+  std::cout << "(adder2) a, b: " << a << ", " << b << std::endl;
+  a = a + 10;
+  b = b + 10;
 }
 
-int main()
-{
-    int a = 3;
-    int b = 4;
+int main() {
+  int a = 3;
+  int b = 4;
 
-    // adder take the value of A and B. This won't affect the underlying
-    // value of A or B
-    adder(a, b);
-    std::cout << "(main) a, b: " << a << ", " << b << std::endl << std::endl;
+  // adder take the value of A and B. This won't affect the underlying
+  // value of A or B
+  adder(a, b);
+  std::cout << "(main) a, b: " << a << ", " << b << std::endl << std::endl;
 
-    // adder takes the value of A and a reference to B. This will affect
-    // the underlying value of B, but not A.
-    adder2(a, b);
-    std::cout << "(main) a, b: " << a << ", " << b << std::endl << std::endl;
-
+  // adder takes the value of A and a reference to B. This will affect
+  // the underlying value of B, but not A.
+  adder2(a, b);
+  std::cout << "(main) a, b: " << a << ", " << b << std::endl << std::endl;
 }
-

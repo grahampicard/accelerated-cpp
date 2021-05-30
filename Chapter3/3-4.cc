@@ -1,5 +1,5 @@
-// write a program to report the length of the longest and shortest string in its input
-// list
+// write a program to report the length of the longest and shortest string in
+// its input list
 //
 // Pseudo:
 //  1.  Create in `instream` to collect all input words.
@@ -14,47 +14,41 @@
 #include <string>
 #include <vector>
 
-using std::cout;
 using std::cin;
+using std::cout;
 using std::string;
 using std::vector;
 
-int main()
-{
-    string x;
-    vector<string> words;
-    vector<int> lengths;
+int main() {
+  string x;
+  vector<string> words;
+  vector<int> lengths;
 
-    while (cin >> x)
-    {
-        if (x == ";")
-            break;
+  while (cin >> x) {
+    if (x == ";") break;
 
-        bool wordExists = false;
+    bool wordExists = false;
 
-        for (vector<string>::size_type i = 0; i < words.size(); ++i)
-        {
-            if (x == words[i])
-            {
-                wordExists = true;
-                break;
-            }
-        }
-
-        if (wordExists == false)
-        {
-            int wordLength = x.length();
-            words.push_back(x);
-            lengths.push_back(wordLength);
-        }
+    for (vector<string>::size_type i = 0; i < words.size(); ++i) {
+      if (x == words[i]) {
+        wordExists = true;
+        break;
+      }
     }
 
-    sort(lengths.begin(), lengths.end());
+    if (wordExists == false) {
+      int wordLength = x.length();
+      words.push_back(x);
+      lengths.push_back(wordLength);
+    }
+  }
 
-    vector<int>::size_type lastWordIdx = lengths.size() - 1;
+  sort(lengths.begin(), lengths.end());
 
-    cout << "Longest word: " << lengths[lastWordIdx] << std::endl
-         << "Shortest word " << lengths[0] << std::endl;
+  vector<int>::size_type lastWordIdx = lengths.size() - 1;
 
-    return 0;
+  cout << "Longest word: " << lengths[lastWordIdx] << std::endl
+       << "Shortest word " << lengths[0] << std::endl;
+
+  return 0;
 }

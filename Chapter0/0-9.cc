@@ -1,2 +1,2 @@
 // What is the shortest program?
-int main() {};
+int main(){};

@@ -5,13 +5,13 @@
 #include <iostream>
 #include <string>
 
-int main()
-{
+int main() {
+  {
+    std::string s = "a string";
     {
-        std::string s = "a string";
-    {
-        std::string x = s + ", really";
-        std::cout << s << std::endl; }
+      std::string x = s + ", really";
+      std::cout << s << std::endl;
     }
-    return 0;
+  }
+  return 0;
 }
