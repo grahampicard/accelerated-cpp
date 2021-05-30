@@ -20,7 +20,7 @@ using std::setprecision;
 using std::streamsize;
 using std::vector;
 
-// returns a double, takes a vector of doubles as an input
+// Calculations
 double median(vector<double> vec)
 {
     // first, we define a datastructure to handle size.
@@ -35,13 +35,11 @@ double median(vector<double> vec)
     return size % 2 == 0 ? (vec[mid] + vec[mid - 1]) / 2 : vec[mid];
 }
 
-// code for grade(double, double, double)
 double grade(double midterm, double final, double homework)
 {
     return 0.2 * midterm + 0.4 * final + 0.4 * homework;
 }
 
-// code for grade(double, double, const<vector>)
 double grade(double midterm, double final, const vector<double>& hw)
 {
     if (hw.size() == 0)
@@ -49,7 +47,9 @@ double grade(double midterm, double final, const vector<double>& hw)
     return grade(midterm, final, median(hw));
 }
 
-// code for read_hw
+// I/O
+// in this case, we are reading directly from an input stream, and we are
+// returning the input stream itself.
 istream& read_hw(istream&in, vector<double>& hw)
 {
     if (in) {

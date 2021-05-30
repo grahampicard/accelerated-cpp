@@ -32,7 +32,7 @@ int main()
     // Calculate break points for quintiles
     std::vector<double>::size_type size = numbers.size();
 
-    if (size < 5) {
+    if (size < 4) {
         std::cout << std::endl 
                   << "You need to enter 5 numbers"
                   << std:: endl;
@@ -41,8 +41,17 @@ int main()
 
     // Quintile size
     int cutoff;
-    cutoff = round(size / 5);
+    cutoff = size / 4;
 
-    std::cout << cutoff;
+    // cutoff = round(size / 5);
 
+    for (std::vector<double>::size_type i = 0; i < size; ++i)
+    {
+        if (i % cutoff == 0)
+        {
+            std::cout << "Quartile " << i / cutoff << ":" << std::endl 
+                      << "-----------" << std::endl;
+        }
+        std::cout << numbers[i] << std::endl;
+    }
 }
