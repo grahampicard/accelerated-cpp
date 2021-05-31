@@ -6,7 +6,7 @@ CFLAGS := -Wall -g
 
 # These are the references we make to our .cc files and
 # the ouptut files that we want to create
-all: 4-0-1 4-0-2 4-2 4-3 4-4 4-5-1 4-5-2
+all: 4-0-1 4-0-2 4-2 4-3 4-4 4-5-1 4-5-2 4-6 4-7
 
 4-0-1: 4-0-1.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
@@ -30,6 +30,9 @@ all: 4-0-1 4-0-2 4-2 4-3 4-4 4-5-1 4-5-2
 	$(CC) $(CFLAGS) $^ -o $@.out
 
 4-6: 4-6.cc grade_v2.cc Student_info_v2.cc median.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+4-7: 4-7.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
 # remove all .out files
