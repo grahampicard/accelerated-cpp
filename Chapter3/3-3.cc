@@ -27,8 +27,6 @@ int main() {
 
   // perform input
   while (std::cin >> x) {
-    if (x == ";") break;
-
     bool wordExists = false;
     for (vector<string>::size_type i = 0; i < words.size(); ++i) {
       // Once the word is found, increment and break

@@ -25,10 +25,7 @@ int main() {
   vector<int> lengths;
 
   while (cin >> x) {
-    if (x == ";") break;
-
     bool wordExists = false;
-
     for (vector<string>::size_type i = 0; i < words.size(); ++i) {
       if (x == words[i]) {
         wordExists = true;

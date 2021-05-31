@@ -6,29 +6,31 @@ CFLAGS := -Wall -g
 
 # These are the references we make to our .cc files and
 # the ouptut files that we want to create
-SRCS := $(wildcard *.cc)
-OBJS := $(patsubst %.cc, %, $(SRCS))
+all: 4-0-1 4-0-2 4-2 4-3 4-4 4-5-1 4-5-2
 
-# Make follows the patern
-#
-# 	Target: Prerequisite
-# 		Rule
-#
-# Make first checks if the prerequisite exists. If it doesn't,
-# Then it recursively finds the starting file. At this point,
-# Make then generates the "target" based on the rule provided
-# below.
-#
-# In our case, we want `all` to generate outputs for each .cc
-# file that we have. 
-# 
-# make will first check to make sure $(OBJS) files exists.
-all:$(OBJS)
+4-0-1: 4-0-1.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
 
-# Make will create an object for each source
-# $@ #target 
-$(OBJS):
-	$(CC) $(CFLAGS) -o $@.out $@.cc 
+4-0-2: 4-0-2.cc grade.cc Student_info.cc median.cc
+	$(CC) $(CFLAGS)  $^ -o $@.out
+
+4-2: 4-2.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+4-3: 4-3.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+4-4: 4-4.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+4-5-1: 4-5-1.cc inputs.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+4-5-2: 4-5-2.cc inputs.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+4-6: 4-6.cc grade_v2.cc Student_info_v2.cc median.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
 
 # remove all .out files
 clean:
