@@ -10,7 +10,6 @@
 
 using std::cin;
 using std::cout;
-using std::domain_error;
 using std::endl;
 using std::max;
 using std::setprecision;
