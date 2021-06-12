@@ -4,10 +4,10 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
-#include <vector>
+#include <list>
 
 #include "grade.h"
-#include "Grade_check_v2.h"
+#include "Grade_check_v4.h"
 #include "Student_info.h"
 
 using std::cin;
@@ -19,15 +19,15 @@ using std::setprecision;
 using std::sort;
 using std::streamsize;
 using std::string; 
-using std::vector;
+using std::list;
 
 // This function extracts the names of all students who failed a given
 // assessment it's technically correct, but it has a disadvantage that it
 // duplicates data in multiple place. First, it logs all students, then
-// it creates pass vector and a fail vector. It populates both vectors,
-// then it overwrites the students vector with the pas vector.
+// it creates pass list and a fail list. It populates both lists,
+// then it overwrites the students list with the pas list.
 int main() {
-  vector<Student_info> students;
+  list<Student_info> students;
   Student_info record;
   string::size_type maxlen = 0;
 
@@ -38,14 +38,18 @@ int main() {
     students.push_back(record);
   }
 
-  sort(students.begin(), students.end(), compare);
+  // sort values
+  students.sort(compare);
 
   // find all students that have failed
-  vector<Student_info> fails = extract_fails(students); 
+  list<Student_info> fails = extract_fails(students); 
 
   // write the names and grades
-  for (vector<Student_info>::size_type i = 0; i != fails.size(); ++i) {
-    cout << fails[i].name << endl;
+  list<Student_info>::iterator iter = fails.begin();   
+  while(iter != fails.end()) {
+    cout << (*iter).name << endl;
+    ++iter;
   }
+
   return 0;
 }

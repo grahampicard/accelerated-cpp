@@ -7,7 +7,7 @@
 #include <vector>
 
 #include "grade.h"
-#include "Grade_check_v2.h"
+#include "Grade_check_v3.h"
 #include "Student_info.h"
 
 using std::cin;
