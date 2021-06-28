@@ -4,6 +4,6 @@
 #include <string>
 #include <vector>
 
-std::vector <std::string> split(const std::string& s);
+std::vector<std::string> split(const std::string& s);
 
 #endif

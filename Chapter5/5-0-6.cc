@@ -1,13 +1,15 @@
-#include <iostream> // cout cin
+#include <iostream>
 #include <string>
-#include <stdio.h>
+#include <math.h>
 #include <vector>
 
-#include "string_split.h" // split
+#include "frames.h"
+#include "string_split.h"
 
 using std::cin;
 using std::cout;
 using std::endl;
+using std::max;
 using std::string;
 using std::vector;
 
@@ -18,6 +20,7 @@ int main()
   while (getline(cin, s))
   {
     vector<string> v = split(s);
+    v = frame(v);
     for (vector<string>::size_type i = 0; i != v.size(); ++i)
     {
       cout << v[i] << endl;
@@ -26,3 +29,4 @@ int main()
 
   return 0;
 }
+

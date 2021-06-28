@@ -9,7 +9,7 @@ using std::vector;
 // Breaks a line of inputs into words, separated from each other by
 // whitespace (space, tab, backspace, or EOF). It reads characters up to
 // the whitespace character.
-vector<string> split(const string &s)
+vector<string> split(const string& s)
 {
 
   // we'll start by defining a string
@@ -22,7 +22,7 @@ vector<string> split(const string &s)
   {
     // ignore leading blanks
     // invariant: characters in range [original i, current i) are all spaces
-    while (i != s.size() && !isspace(s[i]))
+    while (i != s.size() && isspace(s[i]))
       ++i;
 
     // find end of next word
