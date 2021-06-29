@@ -28,6 +28,7 @@ using std::string;
 using std::vector;
 
 string center(const vector<string>&) {
+
 }
 
 int main() {
