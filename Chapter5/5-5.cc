@@ -4,12 +4,15 @@
 // and right sides of the picture. What are the properties of pictures for
 // which such a function is useful? How can you tell whether a given picture
 // has these properties?
-
+// 
+// sample input:
+//  one, two, three, four
+//
 // expected result
-//  one
-//  two
-// three
-// four
+// *  one  *
+// *  two  *
+// * three *
+// * four  *
 
 // pseudo
 //  1.  iterate through each item of the string
@@ -20,19 +23,64 @@
 //  4.  print the image
 //  5.  return 0
 
-
+#include <algorithm>
+#include <iostream>
 #include <string>
 #include <vector>
 
+using std::cout;
+using std::endl;
+using std::max;
 using std::string;
 using std::vector;
 
-string center(const vector<string>&) {
+string center(const vector<string>& v) {
+  vector<string>::size_type max_str = 0;
+  const vector<string>::size_type padding = 1;
+  string result = "";
+
+  // find the maximum length
+  for (vector<string>::const_iterator s = v.begin(); s != v.end(); ++s) {
+    max_str = max(s->length(),max_str);
+  }
+
+  const vector<string>::size_type max_len = max_str + 2 * padding;
+
+  for (vector<string>::size_type i = 0; i < max_len + 2; ++i) {
+    result.append("*");
+  }
+  result.append("\n");
+
+  // iterate through, and print picture based 
+  for (vector<string>::const_iterator s = v.begin(); s != v.end(); ++s) {
+    vector<string>::size_type cur_len = max_len - s->length();
+    result.append("*");
+
+    for (vector<string>::size_type i = 0; i < cur_len / 2; ++i) {
+      result.append(" ");
+    }
+    result.append(*s);
+    for (vector<string>::size_type i = cur_len; i > cur_len / 2; --i) {
+      result.append(" ");
+    }
+    result.append("*\n");
+  }
+
+  for (vector<string>::size_type i = 0; i < max_len + 2; ++i) {
+    result.append("*");
+  }
+  result.append("\n");  
+
+  return result;
 
 }
 
 int main() {
-  vector<string> a = {"one", "two", "three", "four"};
+  vector<string> a = {"one", "two", "three", "four", "alabastar", "harp", "peace", "cordial"};
+
+  string res = center(a);
+  cout << res << endl;
+  return 0;
 }
 
 
