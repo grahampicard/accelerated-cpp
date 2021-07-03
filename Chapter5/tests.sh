@@ -20,7 +20,3 @@ cat testnames-10.csv | ./5-2-vector.out
 echo ""
 echo "5-2-list: " 
 cat testnames-10.csv | ./5-2-list.out
-
-echo ""
-echo "5-6: " 
-cat testnames-10.csv | ./5-6.out
