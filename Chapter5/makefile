@@ -65,6 +65,9 @@ all: 5-0-1 5-0-2 5-0-3 5-0-4 5-0-5 5-0-5-test 5-0-6 5-0-7-h 5-0-7-v 5-1 5-2-vect
 5-10: 5-10.cc string_split.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
+5-11: 5-11.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
 # remove all .out files
 clean:
 	rm *.out
