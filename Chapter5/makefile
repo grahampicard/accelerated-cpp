@@ -6,7 +6,7 @@ CFLAGS := -Wall -g
 
 # These are the references we make to our .cc files and
 # the ouptut files that we want to create
-all: 5-0-1 5-0-2 5-0-3 5-0-4 5-0-5 5-0-5-test 5-0-6 5-0-7-h 5-0-7-v 5-1 5-2-vector 5-2-list 5-3 5-5 5-6
+all: 5-0-1 5-0-2 5-0-3 5-0-4 5-0-5 5-0-5-test 5-0-6 5-0-7-h 5-0-7-v 5-1 5-2-vector 5-2-list 5-3 5-5 5-6 5-7
 
 5-0-1: 5-0-1.cc grade.cc Student_info.cc median.cc Grade_check.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
@@ -54,6 +54,15 @@ all: 5-0-1 5-0-2 5-0-3 5-0-4 5-0-5 5-0-5-test 5-0-6 5-0-7-h 5-0-7-v 5-1 5-2-vect
 	$(CC) $(CFLAGS) $^ -o $@.out
 
 5-6: 5-6.cc Grade_check_v5.cc grade.cc Student_info.cc median.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+5-8: 5-8.cc string_split.cc frames.cc concats-v2.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+5-9: 5-9.cc string_split.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+5-10: 5-10.cc string_split.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
 # remove all .out files

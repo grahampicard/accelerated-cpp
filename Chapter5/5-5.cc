@@ -28,6 +28,7 @@
 #include <string>
 #include <vector>
 
+using std::cin;
 using std::cout;
 using std::endl;
 using std::max;
@@ -76,12 +77,15 @@ string center(const vector<string>& v) {
 }
 
 int main() {
-  vector<string> a = {"one", "two", "three", "four", "alabastar", "harp", "peace", "cordial"};
+  string x;
+  vector<string> words;
 
-  string res = center(a);
+  while (cin >> x) {
+      words.push_back(x);
+  }
+
+  string res = center(words);
   cout << res << endl;
   return 0;
 }
-
-
 
