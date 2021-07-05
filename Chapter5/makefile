@@ -6,7 +6,7 @@ CFLAGS := -Wall -g
 
 # These are the references we make to our .cc files and
 # the ouptut files that we want to create
-all: 5-0-1 5-0-2 5-0-3 5-0-4 5-0-5 5-0-5-test 5-0-6 5-0-7-h 5-0-7-v 5-1 5-2-vector 5-2-list 5-3 5-5 5-6 5-7
+all: 5-0-1 5-0-2 5-0-3 5-0-4 5-0-5 5-0-5-test 5-0-6 5-0-7-h 5-0-7-v 5-1 5-2-vector 5-2-list 5-3 5-5 5-6 5-8 5-9 5-10 5-11
 
 5-0-1: 5-0-1.cc grade.cc Student_info.cc median.cc Grade_check.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
