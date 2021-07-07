@@ -1,8 +1,8 @@
-#ifndef GUARD_median_h
-#define GUARD_median_h
+#ifndef GUARD_MEDIAN_H
+#define GUARD_MEDIAN_H
 
 // median.h
 #include <vector>
 double median(std::vector<double>);
 
-#endif
+#endif  // GUARD_MEDIAN_H
