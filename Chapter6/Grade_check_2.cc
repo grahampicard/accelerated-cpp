@@ -4,6 +4,7 @@
 #include "Student_info.h"
 #include "grade.h"
 
+using std::stable_partition;
 using std::back_inserter;
 using std::remove_copy_if;
 using std::remove_if;
@@ -16,14 +17,8 @@ bool pgrade(const Student_info& s) { return !fgrade(s); }
 // create a vector of all students who failed, and overwrite
 // original vector with all students who passed
 vector<Student_info> extract_fails(vector<Student_info>& students) {
-  vector<Student_info> fail;
-
-  // starts by copying results from the students vector to the fail vector.
-  remove_copy_if(students.begin(), students.end(), back_inserter(fail), pgrade);
-
-  // then remove the failing students from 
-  students.erase(remove_if(students.begin(), students.end(), fgrade),
-                 students.end());
-
+  vector<Student_info>::iterator iter = stable_partition(students.begin(), students.end(), pgrade);
+  vector<Student_info> fail(iter, students.end());
+  students.erase(iter, students.end());
   return fail;
 }

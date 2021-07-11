@@ -10,7 +10,7 @@
 #include <vector>
 
 #include "Student_info.h"
-#include "analysis.h"
+#include "analysis_v2.h"
 #include "grade.h"
 
 using std::cin;
@@ -44,10 +44,9 @@ int main() {
   }
 
   // do the analyses
-  write_analysis(cout, "median", median_analysis, did, didnt);
-  write_analysis(cout, "average", average_analysis, did, didnt);
-  write_analysis(cout, "median of homework turned in",
-                 optimistic_median_analysis, did, didnt);
+  write_analysis(cout, "average", did, didnt, average_grade);
+  write_analysis(cout, "median", did, didnt, grade_aux);
+  write_analysis(cout, "optimistic median", did, didnt, optimistic_median);
 
   return 0;
 }
