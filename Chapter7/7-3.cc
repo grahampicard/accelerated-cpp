@@ -1,11 +1,12 @@
 // Generating a cross-reference table
 // (S7.3 / 126)
 
-#include <iostream>  // cin, cout
-#include <istream>   // istream
-#include <map>       // map
-#include <string>    // string
-#include <vector>    // vector
+#include <algorithm>  // sort, unique
+#include <iostream>   // cin, cout
+#include <istream>    // istream
+#include <map>        // map
+#include <string>     // string
+#include <vector>     // vector
 
 #include "string_split.h"
 
@@ -14,7 +15,9 @@ using std::cout;
 using std::endl;
 using std::istream;
 using std::map;
+using std::sort;
 using std::string;
+using std::unique;
 using std::vector;
 
 // declaring xref to use "split" by default, but we can use another
@@ -35,6 +38,14 @@ map<string, vector<int>> xref(
 
     // break the input line into words
     vector<string> words = find_words(line);
+    sort(words.begin(), words.end());
+
+    for (vector<string>::iterator i = words.begin(); i != words.end(); ++i) {
+      if (*i == *(i+1) ) {
+        words.erase(i);
+        --i;
+      }
+    }
 
     // remember that each word occurs on the current line
     for (vector<string>::const_iterator it = words.begin(); it != words.end();
