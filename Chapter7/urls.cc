@@ -91,14 +91,3 @@ vector<string> find_urls(const string& s)
   }
   return ret;
 }
-
-int main()
-{
-  string testStr = "okay let's see http://google.com does it work? or http://yahoo.com is one?";
-  vector<string> ret = find_urls(testStr);
-
-  for (vector<string>::iterator i = ret.begin(); i != ret.end(); ++i)
-  {
-    cout << *i << endl;
-  }
-}

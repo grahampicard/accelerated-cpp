@@ -9,7 +9,7 @@
 #include <string>    // string
 #include <vector>    // vector
 
-#include "string_split.h"
+#include "urls.h"
 
 using std::cin;
 using std::cout;
@@ -23,7 +23,7 @@ using std::vector;
 // function to find words. For instance, we could use the find_urls
 // function to locate url locations
 map<string, vector<int>> xref(
-    istream &in, vector<string> find_words(const string &) = split) {
+    istream &in, vector<string> find_words(const string &s) = find_urls) {
   string line;
   int line_number = 0;
 
