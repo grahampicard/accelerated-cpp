@@ -14,7 +14,7 @@ all: 7-0-1 7-0-2 7-0-3 7-1 7-2 7-3 7-4 7-7 7-8
 7-0-2: 7-0-2.cc string_split.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
-7-0-3: 7-0-3.cc string_split.cc bracketed.cc gen_aux.cc gen_sentence.cc nrand.cc read_grammar.cc
+7-0-3: 7-0-3.cc grammar_exercise.cc string_split.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
 7-1: 7-1.cc
@@ -26,7 +26,7 @@ all: 7-0-1 7-0-2 7-0-3 7-1 7-2 7-3 7-4 7-7 7-8
 7-3: 7-3.cc string_split.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
-7-4: 7-4.cc string_split.cc bracketed.cc gen_aux_list.cc gen_sentence_list.cc nrand.cc read_grammar.cc
+7-4: 7-4.cc grammar_exercise_list.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
 7-7: 7-7.cc string_split.cc

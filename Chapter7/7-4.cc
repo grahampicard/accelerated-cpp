@@ -2,24 +2,23 @@
 // (S7.4 / xxx)
 
 #include <iostream>
-#include <list>
 #include <string>
+#include <vector>
 
-#include "gen_sentence_list.h"
-#include "read_grammar.h"
+#include "grammar_exercise.h"
 
 using std::cin;
 using std::cout;
 using std::endl;
-using std::list;
 using std::string;
+using std::vector;
 
 int main() {
   // generate the sentenc
-  list<string> sentence = gen_sentence(read_grammar(cin));
+  vector<string> sentence = gen_sentence(read_grammar(cin));
 
   // write the first word, if any
-  list<string>::const_iterator it = sentence.begin();
+  vector<string>::const_iterator it = sentence.begin();
   if (!sentence.empty()) {
     cout << *it;
     ++it;

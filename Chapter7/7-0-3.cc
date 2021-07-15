@@ -5,8 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "gen_sentence.h"
-#include "read_grammar.h"
+#include "grammar_exercise.h"
 
 using std::cin;
 using std::cout;
