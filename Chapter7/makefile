@@ -26,7 +26,10 @@ all: 7-0-1 7-0-2 7-0-3 7-1 7-2 7-3 7-4 7-7 7-8
 7-3: 7-3.cc string_split.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
-7-4: 7-4.cc grammar_exercise_list.cc
+7-4: 7-4.cc string_split.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+7-5: 7-5.cc grammar_exercise_list.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
 7-7: 7-7.cc string_split.cc

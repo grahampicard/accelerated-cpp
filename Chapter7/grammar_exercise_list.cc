@@ -1,3 +1,4 @@
+#include <algorithm> // next
 #include <cctype>
 #include <iostream>  // istream
 #include <string>    // string
@@ -6,7 +7,7 @@
 #include <vector>        // vector
 #include <vector>
 
-#include "grammar_exercise.h"
+#include "grammar_exercise_list.h"
 #include "string_split.h"
 
 using std::domain_error;
@@ -15,6 +16,7 @@ using std::istream;
 using std::logic_error;
 using std::string;
 using std::vector;
+using std::next;
 
 // Breaks a line of inputs into words, separated from each other by
 // whitespace (space, tab, backspace, or EOF). It reads characters up to
@@ -73,9 +75,13 @@ void gen_aux(const Grammar& g, const string& word, vector<string>& ret) {
 
     // fetch the set of possible rules
     const Rule_collection& c = it->second;
-
+  
     // from which we select one at random
-    const Rule& r = c[nrand(c.size())];
+    int n = nrand(c.size());
+    Rule_collection::const_iterator ci = c.begin();
+    next(ci,n);
+
+    const Rule& r = *ci;
 
     // recursively expand the selected rule
     for (Rule::const_iterator i = r.begin(); i != r.end(); ++i)
