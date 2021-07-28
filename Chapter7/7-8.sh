@@ -1,0 +1,1 @@
+echo "this is http://www.google.com\nthis was http://www.yahoo.com\nha!\nhttp://www.askjeeves.com" | ./7-8.out

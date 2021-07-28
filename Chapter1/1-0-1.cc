@@ -1,3 +1,4 @@
+// (S1.1 / 1)
 // compile all programs in the chapter
 // ask for a person's name, and greet the person
 #include <iostream>

@@ -20,6 +20,7 @@ using std::setprecision;
 using std::streamsize;
 using std::vector;
 
+// (S4.1.1 / 53)
 // Calculations
 double median(vector<double> vec) {
   // first, we define a datastructure to handle size.

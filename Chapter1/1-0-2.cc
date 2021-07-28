@@ -1,3 +1,4 @@
+// (S1.1 / 12)
 // ask for a person's name, and generate a framed greeting
 #include <iostream>
 #include <string>

@@ -1,53 +1,58 @@
-// Section 6-2: Comparing grading schemes
-// Pages: 111-116
+// (S6.2 / 117-120)
+// Comparing grading schemes
 //
-// Uses various methods of calculating final grades.
-//
-// Must require all students to have the same number
-// of grades as an input.
+// This takes multiple approaches to try to solve the list/vector problem
+// from Chapter 5. This problem also uses iterators to operate on the elements
+// in a vector. 
 
+#include <algorithm>
+#include <iomanip>
+#include <ios>
 #include <iostream>
+#include <stdexcept>
+#include <string>
 #include <vector>
 
-#include "Student_info.h"
-#include "analysis.h"
 #include "grade.h"
+#include "Grade_check.h"
+#include "Student_info.h"
 
 using std::cin;
 using std::cout;
+using std::domain_error;
 using std::endl;
+using std::max;
+using std::setprecision;
+using std::sort;
+using std::streamsize;
+using std::string;
 using std::vector;
 
-// Compare the Grading Scheme
-// (S6.2.3/114)
+// This function extracts the names of all students who failed a given
+// assessment it's technically correct, but it has a disadvantage that it
+// duplicates data in multiple place. First, it logs all students, then
+// it creates pass vector and a fail vector. It populates both vectors,
+// then it overwrites the students vector with the pas vector.
 int main() {
-  // students who did and didn't do all their homework
-  vector<Student_info> did, didnt;
+  vector<Student_info> students;
+  Student_info record;
+  string::size_type maxlen = 0;
 
-  // read the student records and partition them
-  Student_info student;
-  while (read(cin, student)) {
-    if (did_all_hw(student))
-      did.push_back(student);
-    else
-      didnt.push_back(student);
+  // Invariant:  students contain all the records read so far.
+  //             maxlen contains the length of the longest name
+  while(read(cin, record)) {
+    maxlen = max(maxlen, record.name.size());
+    students.push_back(record);
   }
 
-  // verify that the analyses will show us something
-  if (did.empty()) {
-    cout << "No student did all the homework!" << endl;
-    return 1;
-  }
-  if (didnt.empty()) {
-    cout << "No student did all the homework!" << endl;
-    return 1;
-  }
+  sort(students.begin(), students.end(), compare);
 
-  // do the analyses
-  write_analysis(cout, "median", median_analysis, did, didnt);
-  write_analysis(cout, "average", average_analysis, did, didnt);
-  write_analysis(cout, "median of homework turned in",
-                 optimistic_median_analysis, did, didnt);
+  // find all students that have failed
+  vector<Student_info> fails = extract_fails(students); 
 
+  // write the names and grades
+  for (vector<Student_info>::size_type i = 0; i != fails.size(); ++i) {
+    cout << fails[i].name << endl;
+  }
   return 0;
 }

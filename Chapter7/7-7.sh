@@ -1,0 +1,1 @@
+echo "this is\nthis was" | ./7-7.out

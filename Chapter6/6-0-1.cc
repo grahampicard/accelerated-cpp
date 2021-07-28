@@ -1,5 +1,5 @@
-// Section 6-1: Analyzing strings
-// Pages: 101-103
+// (S6.1 / 101-103)
+// Analyzing strings
 //
 // This example shows how to use `copy` to concatenate two containers.
 // It leverages iterators, which are commonly used in C++.

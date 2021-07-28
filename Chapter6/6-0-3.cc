@@ -1,5 +1,5 @@
-// Section 6-1-2: Palindromes
-// Pages: 105
+// (S6.1.2 / 105)
+// Palindromes
 //
 // Uses `equal` algorithm, which also leverages iterators
 // to reimplement our palindrome function created in earlier chapters

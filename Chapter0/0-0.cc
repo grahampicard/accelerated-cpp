@@ -1,5 +1,5 @@
+// (S0.0 / 1)
 // Hello World Function
-
 #include <iostream>
 
 int main() {

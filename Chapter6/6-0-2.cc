@@ -1,5 +1,5 @@
-// Section 6-1-1: Another way to split
-// Pages: 103-105
+// (S6.1.1 / 103-105)
+// Another way to split
 //
 // Uses `find_if` algorithm, which also leverages iterators
 // to reimplement our string split function created in earlier chapters

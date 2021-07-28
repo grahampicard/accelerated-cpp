@@ -1,7 +1,3 @@
-// Reimplement the gen_sentence program using two vectors. One will fully
-// unwound, generated sentence, and the other will hold the rules and be
-// used as a stack. Do not use any recursive calls.
-//
 // Generating sentences
 // (S7.4 / xxx)
 
@@ -9,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "grammar_exercise_list.h"
+#include "grammar_exercise_stack.h"
 
 using std::cin;
 using std::cout;
@@ -18,7 +14,8 @@ using std::string;
 using std::vector;
 
 int main() {
-  // generate the sentenc
+  // The sentence takes in a grammar. An example grammar is
+  // <noun> cat.... 
   vector<string> sentence = gen_sentence(read_grammar(cin));
 
   // write the first word, if any

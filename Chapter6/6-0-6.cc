@@ -1,5 +1,5 @@
-// Section 6-2: Comparing grading schemes
-// Pages: 117-120
+// (S6.2 / 117-120)
+// Comparing grading schemes
 //
 // This takes multiple approaches to try to solve the list/vector problem
 // from Chapter 5. This problem also uses iterators to operate on the elements

@@ -1,0 +1,1 @@
+echo "This is the way\nThat this works\nDo you see this is the way?" | ./7-1.out

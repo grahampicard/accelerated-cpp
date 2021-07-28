@@ -6,7 +6,8 @@ CFLAGS := -Wall -g
 
 # These are the references we make to our .cc files and
 # the ouptut files that we want to create
-all: 7-0-1 7-0-2 7-0-3 7-1 7-2 7-3 7-4 7-7 7-8
+all: 7-0-1 7-0-2 7-0-3 7-1 7-2 7-3 7-4 7-5 7-6 7-7 \
+		 7-8
 
 7-0-1: 7-0-1.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
@@ -32,10 +33,16 @@ all: 7-0-1 7-0-2 7-0-3 7-1 7-2 7-3 7-4 7-7 7-8
 7-5: 7-5.cc grammar_exercise_list.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
+7-6: 7-6.cc grammar_exercise_stack.cc string_split.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
 7-7: 7-7.cc string_split.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
 7-8: 7-8.cc urls.cc string_split.cc
+	$(CC) $(CFLAGS) $^ -o $@.out
+
+7-9: 7-9.cc grammar_exercise_nrand.cc string_split.cc
 	$(CC) $(CFLAGS) $^ -o $@.out
 
 # remove all .out files
